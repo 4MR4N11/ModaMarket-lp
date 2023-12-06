@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <script>
+		function scrollToSection(sectionId) {
+			const section = document.getElementById(sectionId);
+
+			if (section) {
+				section.scrollIntoView({ behavior: 'smooth' });
+			}
+		}
+	</script>
+                <nav class="container nav">
+                    <div class="logo">
+                        <span>M</span>oda.<span class="sp2">Market</span>
+                    </div>
+                    <ul>
+                        <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+						<li><a href="#features" onclick="scrollToSection('features')">Features</a></li>
+						<li><a href="#about" onclick="scrollToSection('contact')">About</a></li>
+                    </ul>
+                </nav>
+                
+                <main class="hero container" id="home">
+                    <div class="hero-content">
+                        <h1 class="animated-text">BECAUSE YOU DESERVE THE BEST</h1>
+                        <p class="animated-text">
+                            "UNLEASH YOUR STYLE. DISCOVER THE PINNACLE OF FASHION, WHERE EVERY CLICK ELEVATES YOUR WARDROBE
+                            EXPERIENCE. SHOP SMART, SHOP MODA.MARKET."
+                        </p>
+                        <div class="hero-btn">
+                            <button><a href="/products" class="shop-btn"> Shop Now</a></button>
+                        </div>
+                        <div class="shopping">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="assets/images/heroimage.png" alt="hero" />
+                    </div>
+                </main>
+                
+                <section id="features" class="features container">
+                    <h1>Key <span class="highlight">Features</span></h1>
+                    <div class="feature-cards">
+                        <!-- Feature Card -->
+                        <div class="feature-card">
+                            <img src="assets/images/2.png" alt="Fast Shipping" />
+                            <h3>Fast Shipping</h3>
+                            <p>Get your favorite items delivered at lightning speed.</p>
+                        </div>
+                        <div class="feature-card">
+                            <img src="assets/images/3.png" alt="Quality Products" />
+                            <h3>Quality Products</h3>
+                            <p>Discover a curated collection of high-quality fashion items.</p>
+                        </div>
+                        <div class="feature-card">
+                            <img src="assets/images/1.png" alt="Easy Returns" />
+                            <h3>Easy Returns</h3>
+                            <p>Not satisfied? No worries! Our easy return process has you covered.</p>
+                        </div>
+                        <!-- End Feature Card -->
+                    </div>
+                </section>
+				<section id="about" class="about">
+					<div class="container">
+						<div class="about__content">
+							<h1>About Our <span class="highlight">Fashion Shop</span></h1>
+							<p>
+								Our fashion shop project is more than just an online storefront; it's a reflection of our shared love for fashion and technology. The idea was born out of a desire to create a seamless and enjoyable shopping experience for fashion enthusiasts around the world.
+							</p>
+							<p>
+								As a team, we set out to design and develop a platform that not only showcases the latest trends but also provides a user-friendly interface for customers to explore and purchase their favorite items effortlessly.
+							</p>
+							<p>
+								The journey included countless design iterations, coding sessions, and collaborative efforts to ensure that our fashion shop meets the highest standards. It's not just a project for Holberton School; it's a testament to our dedication to merging technology with the world of fashion.
+							</p>
+							<div class="team our__team">
+								<div class="container">
+									<div class="team__content">
+										<h2>
+											Our <span class="highlight">Team</span>
+										</h2>
+									</div>
+									<div class="team__wrapper" id="teamWrapper">
+									</div>
+								</div>
+							</div>
+							<p>
+								Explore the source code of our project on GitHub:
+								<a href="https://github.com/your-username/fashion-shop" target="_blank">Moda.Market Repository</a>
+							</p>
+							<p>
+								We invite you to experience the world of fashion through our eyes. Happy shopping!
+							</p>
+						</div>
+					</div>
+				</section>
+				<script>
+					document.addEventListener('DOMContentLoaded', function () {
+						const teamMembers = [
+							{
+								imgUrl: 'assets/images/amrani.png',
+								name: 'Khalid El Amrani',
+								linkedin: "https://www.linkedin.com/in/4mr4n11/",
+								github: "https://github.com/4mr4n11",
+								twitter: "https://twitter.com/4mr4n11",
+							},
+							{
+								imgUrl: "assets/images/mazoz.jpg",
+								name: 'Oumayma Mazoz',
+								linkedin: "https://www.linkedin.com/in/4mr4n11/",
+								github: "https://github.com/4mr4n11",
+								twitter: "https://twitter.com/4mr4n11",
+							},
+							{
+								imgUrl: 'assets/images/talaini.jpg',
+								name: 'Mohammed Talaini',
+								linkedin: "https://www.linkedin.com/in/4mr4n11/",
+								github: "https://github.com/4mr4n11",
+								twitter: "https://twitter.com/4mr4n11",
+							},
+						];
+			
+						const teamWrapper = document.getElementById('teamWrapper');
+			
+						teamMembers.forEach((item, index) => {
+							const teamItem = document.createElement('div');
+							teamItem.classList.add('team__item');
+			
+							teamItem.innerHTML = `
+								<div class='team__img'>
+									<img src='${item.imgUrl}' alt='' />
+								</div>
+								<div class='team__details'>
+									<h4>${item.name}</h4>
+									<div class='team__member-social'>
+										<span><i class='ri-linkedin-line'><a href='${item.linkedin}' target="_blank"><img src='linkedin-icon.png' alt='LinkedIn'></a></i></span>
+										<span><i class='ri-twitter-line'><a href='${item.twitter}' target="_blank"><img src='twitter-icon.png' alt='Twitter'></a></i></span>
+										<span><i class='ri-github-line'><a href='${item.github}' target="_blank"><img src='github-icon.png' alt='GitHub'></a></i></span>
+									</div>
+								</div>
+							`;
+			
+							teamWrapper.appendChild(teamItem);
+						});
+					});
+				</script>
+</body>
+</html>
